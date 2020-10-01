@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTestsTable extends Migration
+class AddTitleToContactFormsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateTestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tests', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string("text",100);
-            $table->timestamps();
+        Schema::table('contact_forms', function (Blueprint $table) {
+            //
+            $table->string('title', 50)->after('your_name');
         });
     }
 
@@ -27,6 +26,9 @@ class CreateTestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tests');
+        Schema::table('contact_forms', function (Blueprint $table) {
+            //
+            $table->dropColumn('title');
+        });
     }
 }
