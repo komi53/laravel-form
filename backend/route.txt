@@ -9,6 +9,7 @@
 |        | GET|HEAD | _debugbar/open                | debugbar.openhandler  | Barryvdh\Debugbar\Controllers\OpenHandlerController@handle             | Barryvdh\Debugbar\Middleware\DebugbarEnabled,Closure |
 |        | GET|HEAD | _debugbar/telescope/{id}      | debugbar.telescope    | Barryvdh\Debugbar\Controllers\TelescopeController@show                 | Barryvdh\Debugbar\Middleware\DebugbarEnabled,Closure |
 |        | GET|HEAD | api/user                      |                       | Closure                                                                | api,auth:api                                         |
+|        | GET|HEAD | contact/index                 | contact.index         | App\Http\Controllers\ContactFromController@index                       | web,auth                                             |
 |        | GET|HEAD | home                          | home                  | App\Http\Controllers\HomeController@index                              | web,auth                                             |
 |        | POST     | login                         |                       | App\Http\Controllers\Auth\LoginController@login                        | web,guest                                            |
 |        | GET|HEAD | login                         | login                 | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest                                            |
