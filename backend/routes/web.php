@@ -16,6 +16,16 @@ Route::get('/', function () {
 });
 
 Route::get('tests/test', 'TestController@index');
+
+//ログイン後に入れるようにする
+Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function(){
+    Route::get('index', 'ContactFromController@index');
+});
+
+
+//REST
+//Route::resource('contacts', 'ContactFromController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
