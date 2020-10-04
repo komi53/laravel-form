@@ -19,14 +19,14 @@ Route::get('tests/test', 'TestController@index');
 
 //ログイン後に入れるようにする
 Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function(){
-    Route::get('index', 'ContactFromController@index')->name('contact.index');
-    Route::get('create', 'ContactFromController@create')->name('contact.create');
-    Route::post('store', 'ContactFromController@store')->name('contact.store');
+    Route::get('index', 'ContactformController@index')->name('contact.index');
+    Route::get('create', 'ContactformController@create')->name('contact.create');
+    Route::post('store', 'ContactformController@store')->name('contact.store');
 });
 
 
 //REST
-//Route::resource('contacts', 'ContactFromController');
+//Route::resource('contacts', 'ContactformController');
 
 Auth::routes();
 

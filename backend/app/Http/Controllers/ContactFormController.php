@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\ContactForm;
 
-class ContactFromController extends Controller
+class ContactFormController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -90,7 +90,7 @@ class ContactFromController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource Form storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
