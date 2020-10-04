@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\ContactForm;
+
 class ContactFromController extends Controller
 {
     /**
@@ -36,15 +38,21 @@ class ContactFromController extends Controller
      */
     public function store(Request $request)
     {
-        $your_name = $request->input('your_name');
-        $title = $request->input('title');
-        $email = $request->input('email');
-        $url = $request->input('url');
-        $gender = $request->input('gender');
-        $age = $request->input('age');
-        $contact = $request->input('contact');
 
-        dd($your_name, $title);
+        $contact = new ContactFrom;
+
+        $contact->your_name = $request->input('your_name');
+        $contact->title = $request->input('title');
+        $contact->email = $request->input('email');
+        $contact->url = $request->input('url');
+        $contact->gender = $request->input('gender');
+        $contact->age = $request->input('age');
+        $contact->contact = $request->input('contact');
+
+        $contact->save();
+
+        return redirect('contact/index');
+        //dd($your_name, $title);
     }
 
     /**
