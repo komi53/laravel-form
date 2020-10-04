@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactFromsTable extends Migration
+class CreateContactFormsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,6 +17,7 @@ class CreateContactFromsTable extends Migration
             $table->bigIncrements('id');
             //氏名、メールアドレス、url、性別、年齢、お問い合わせ
             $table->string('your_name', 20);
+            $table->string('title', 50);
             $table->string('email', 255);
             $table->longText('url')->nullable($value = true);
             $table->boolean('gender');
@@ -32,6 +33,6 @@ class CreateContactFromsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_froms');
+        Schema::dropIfExists('contact_forms');
     }
 }

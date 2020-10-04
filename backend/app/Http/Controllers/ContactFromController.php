@@ -39,7 +39,7 @@ class ContactFromController extends Controller
     public function store(Request $request)
     {
 
-        $contact = new ContactFrom;
+        $contact = new ContactForm;
 
         $contact->your_name = $request->input('your_name');
         $contact->title = $request->input('title');
