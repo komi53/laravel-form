@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\ContactForm;
 
+use Illuminate\Support\facades\DB;
+
 class ContactFormController extends Controller
 {
     /**
@@ -15,8 +17,16 @@ class ContactFormController extends Controller
      */
     public function index()
     {
-        //
-        return view('contact.index');
+        //エロクアント ORラッパー
+        // $contacts = ContactForm::all();
+
+        //クエリビルダ
+        $contacts = DB::table('contact_forms')
+        ->select('id', 'your_name')
+        ->get();
+        dd($contacts);
+
+        return view('contact.index', compact('contacts'));
     }
 
     /**
