@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('contact/update', ['id' => $contact->id ]) }}">
                     @csrf
 
                     氏名
