@@ -46,18 +46,6 @@
                     お問い合わせ内容
                     <textarea name="contact">{{ $contact->contact }}</textarea>
                     <br>
-
-                
-                    editです。
-                    
-                    {{ $contact->title }}
-                    {{ $contact->email }}
-                    {{ $contact->url }}
-                    {{ $contact->gender }}
-                    {{ $contact->age }}
-                    {{ $contact->contact }}
-
-
                     <input class="btn btn-info" type="submit" value="更新する">
                     </>
                 </div>

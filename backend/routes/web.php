@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('tests/test', 'TestController@index');
 
 //ログイン後に入れるようにする
+//グループでまとめることができる
 Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function(){
     Route::get('index', 'ContactformController@index')->name('contact.index');
     Route::get('create', 'ContactformController@create')->name('contact.create');
